@@ -18,16 +18,21 @@ class Window extends JFrame{
         setOpacity(0.3f);
 
         setLayout(new GridBagLayout());
-        
+
+        buildPanel();
+        add(panel);
+
+    }
+
+    private void buildPanel(){
         //buttons and shit
         exit = new JButton("Exit");
 
         //panel
         panel = new JPanel();
+
+        //adding the components to the panel
         panel.add(exit);
-
-        add(panel);
-
     }
 
 }
