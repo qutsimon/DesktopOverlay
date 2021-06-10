@@ -2,6 +2,8 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 
+import org.w3c.dom.events.MouseEvent;
+
 import java.awt.event.*;
 
 
@@ -18,8 +20,10 @@ class Window extends JFrame{
         setLocationRelativeTo(null);
 
         setUndecorated(true);
-        setOpacity(0.3f);
+        setBackground(new Color(1.0f,1.0f,1.0f,0.2f));
+        //setOpacity(0.3f);
 
+        //should move the main container to its own class
         buildPanel();
         add(panel);
 
@@ -35,6 +39,8 @@ class Window extends JFrame{
         
         //panel
         panel = new JPanel();
+
+        panel.setBackground(new Color(1.0f,1.0f,1.0f,0.2f));
 
         //registering event listners 
         exit.addActionListener(new ExitButtonListner());
@@ -54,5 +60,7 @@ class Window extends JFrame{
             dispose();
         }
     }
+
+   
 
 }
