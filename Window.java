@@ -31,8 +31,6 @@ class Window extends JFrame{
         //buttons and shit
         exit = new LabelButton("Exit");
 
-        exit.setBorderPainted(false);
-
         //panel
         panel = new JPanel();
 
