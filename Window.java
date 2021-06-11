@@ -10,8 +10,12 @@ import java.awt.event.*;
 class Window extends JFrame{
 
     private JPanel panel;
+    private LabelButton weather;
+    private LabelButton calendar;
     private LabelButton reddit;
+    private LabelButton options;
     private LabelButton exit;
+
 
     public Window(String windowName, int winWidth, int winHeight){
         super(windowName);
@@ -22,6 +26,9 @@ class Window extends JFrame{
         setUndecorated(true);
         setBackground(new Color(1.0f,1.0f,1.0f,0.2f));
         //setOpacity(0.3f);
+
+        //removes taskbar
+        setFocusableWindowState(false);
 
         //should move the main container to its own class
         buildPanel();
@@ -34,7 +41,10 @@ class Window extends JFrame{
     private void buildPanel(){
 
         //North Label Buttons
+        calendar = new LabelButton("Calendar");
+        weather = new LabelButton("Weather");
         reddit = new LabelButton("Reddit");
+        options = new LabelButton("Options");
         exit = new LabelButton("Exit");
         
         //panel
@@ -46,7 +56,10 @@ class Window extends JFrame{
         exit.addActionListener(new ExitButtonListner());
 
         //adding the components to the panel
+        panel.add(calendar, BorderLayout.NORTH);
+        panel.add(weather, BorderLayout.NORTH);
         panel.add(reddit, BorderLayout.NORTH);
+        panel.add(options, BorderLayout.NORTH);
         panel.add(exit, BorderLayout.NORTH);
     
     }

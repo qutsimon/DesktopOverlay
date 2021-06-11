@@ -1,6 +1,8 @@
 /**
  * Class that extends JButton to create a button without a background etc, 
  * to replicate a clickable label.
+ * 
+ * - Need to remove button colouring on click
  */
 
 import javax.swing.*;
@@ -14,6 +16,9 @@ class LabelButton extends JButton{
         //stoped the changing colour on rollover - also removes focus colouring
         //some reason setfocuspainted doesn't work
         setRolloverEnabled(false);
+        //removes on select colour - maybe not
+        setSelected(false);
+         //some reason setfocuspainted doesn't work
         setFocusable(false);
 
         //

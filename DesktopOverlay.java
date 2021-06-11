@@ -9,6 +9,8 @@ class DesktopOverlay{
          public void run(){
             Window newWindow = new Window("hello",400,300);
             newWindow.setVisible(true);
+            //This sets it to the bottom - uncomment after testing
+            //newWindow.toBack();
          }   
         });
     }
